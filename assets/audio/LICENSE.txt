@@ -1,0 +1,27 @@
+NUDGE study music — provenance and rights
+Retrieved: October 17, 2026
+
+Composition: J. S. Bach, Goldberg Variations, BWV 988 (public domain).
+Performance: Kimiko Ishizaka, Open Goldberg Variations, 2012.
+Recorded at Teldex Studio, Berlin. Producer: Anne-Marie Sylvestre.
+
+The project releases the recording into the public domain under CC0 1.0 Universal.
+Project declaration: https://opengoldbergvariations.org/
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Full legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
+Recording archive: https://archive.org/details/The_Open_Goldberg_Variations-11823
+Machine-readable rights: https://archive.org/metadata/The_Open_Goldberg_Variations-11823
+
+Files are unchanged VBR MP3 recordings, renamed for the asset bundle:
+aria.mp3
+  Kimiko_Ishizaka_-_01_-_Aria.mp3
+  MD5: 1edc5f69f8602eb6737401c0c260326c
+variation13.mp3
+  Kimiko_Ishizaka_-_14_-_Variatio_13_a_2_Clav.mp3
+  MD5: f755bae3815450d9e2b5a607b583e238
+variation15.mp3
+  Kimiko_Ishizaka_-_16_-_Variatio_15_a_1_Clav_Canone_alla_Quinta.mp3
+  MD5: 90e338f541efd254edcada1422c1237e
+
+Credit is included voluntarily. These rights apply to these specific recordings,
+not to other recordings of the same compositions.

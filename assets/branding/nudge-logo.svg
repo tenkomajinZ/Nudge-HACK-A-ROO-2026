@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 32 32">
+<title>Nudge open book and spark</title>
+<path fill="#CBB6FA" d="M 6 14 Q 10.5 12 15 15 L 15 27 Q 10.5 24 6 25 Q 5 25 5 24 L 5 15 Q 5 14.4 6 14 Z"/>
+<path fill="#CBB6FA" d="M 26 14 Q 21.5 12 17 15 L 17 27 Q 21.5 24 26 25 Q 27 25 27 24 L 27 15 Q 27 14.4 26 14 Z"/>
+<path fill="#CBB6FA" d="M 16 5 Q 16.6 8.4 19.5 9 Q 16.6 9.6 16 13 Q 15.4 9.6 12.5 9 Q 15.4 8.4 16 5 Z"/>
+</svg>

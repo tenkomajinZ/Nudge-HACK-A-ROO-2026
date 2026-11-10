@@ -1,0 +1,230 @@
+{
+  "simulated": true,
+  "questions": [
+    {
+      "id": "q0",
+      "concept": "Retrieval practice",
+      "prompt": "Remember before reopening the notes.",
+      "source": "Demo notes, page 1",
+      "evidence": "Retrieval practice means bringing information to mind without looking at the source.",
+      "explanation": "Try to retrieve an answer before checking the notes.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Trying to remember before looking is called _____ practice.",
+          "kind": "fill",
+          "options": {},
+          "correct": "",
+          "accepted": [
+            "retrieval",
+            "active recall"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q1",
+      "concept": "Spacing",
+      "prompt": "Plan reviews over two days.",
+      "source": "Demo notes, page 1",
+      "evidence": "Spacing distributes practice across separate study periods.",
+      "explanation": "Separate sessions provide spaced opportunities to retrieve the material.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which schedule distributes practice over separate periods?",
+          "kind": "choice",
+          "options": {
+            "a": "Review across separate study periods",
+            "b": "Do every review in one sitting",
+            "c": "Never return to the topic"
+          },
+          "correct": "a",
+          "accepted": []
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "concept": "Feedback",
+      "prompt": "Check an attempted answer.",
+      "source": "Demo notes, page 1",
+      "evidence": "Feedback identifies mistakes so the learner can correct them.",
+      "explanation": "Checking an attempted answer helps identify and correct errors.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Checking and correcting an attempted answer provides _____.",
+          "kind": "fill",
+          "options": {},
+          "correct": "",
+          "accepted": [
+            "feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "concept": "Interleaving",
+      "prompt": "Choose practice for several problem types.",
+      "source": "Demo notes, page 1",
+      "evidence": "Interleaving mixes different kinds of problems within a practice session.",
+      "explanation": "Interleaving asks you to select a method as well as apply it.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which activity mixes problem types within one session?",
+          "kind": "choice",
+          "options": {
+            "a": "Mixing different kinds of problems",
+            "b": "Repeating only one problem type",
+            "c": "Skipping practice"
+          },
+          "correct": "a",
+          "accepted": []
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "concept": "Elaboration",
+      "prompt": "Link a new topic to an old one.",
+      "source": "Demo notes, page 1",
+      "evidence": "Elaboration connects new information to what the learner already knows.",
+      "explanation": "Explaining a connection is a way to elaborate.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Linking a new topic to prior knowledge is called _____.",
+          "kind": "fill",
+          "options": {},
+          "correct": "",
+          "accepted": [
+            "elaboration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "concept": "Self-explanation",
+      "prompt": "Describe the reason behind a step.",
+      "source": "Demo notes, page 1",
+      "evidence": "Self-explanation describes why a solution step makes sense.",
+      "explanation": "A useful self-explanation includes the reason behind the step.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which action gives a reason rather than simply copying?",
+          "kind": "choice",
+          "options": {
+            "a": "Explaining why a solution step works",
+            "b": "Copying a solution without thought",
+            "c": "Only checking the final answer"
+          },
+          "correct": "a",
+          "accepted": []
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "concept": "Distraction control",
+      "prompt": "Remove an avoidable interruption.",
+      "source": "Demo notes, page 1",
+      "evidence": "Silencing optional notifications reduces interruptions during focus time.",
+      "explanation": "Reducing optional notifications removes one source of interruption.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "To reduce interruptions, silence optional _____.",
+          "kind": "fill",
+          "options": {},
+          "correct": "",
+          "accepted": [
+            "notifications",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "concept": "Breaks",
+      "prompt": "Pause between two focus periods.",
+      "source": "Demo notes, page 1",
+      "evidence": "A planned break separates focus blocks and allows a pause before returning.",
+      "explanation": "A break is a deliberate pause between focus periods.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What describes a planned pause between two focus periods?",
+          "kind": "choice",
+          "options": {
+            "a": "A deliberate pause between focus blocks",
+            "b": "A requirement to stop studying forever",
+            "c": "An extra exam"
+          },
+          "correct": "a",
+          "accepted": []
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "concept": "Review priorities",
+      "prompt": "Use your quiz results to plan.",
+      "source": "Demo notes, page 1",
+      "evidence": "Missed concepts are useful targets for the next focused review.",
+      "explanation": "Use the mistakes to choose what to revisit.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What should guide the next review after a quiz?",
+          "kind": "choice",
+          "options": {
+            "a": "Concepts missed on the quiz",
+            "b": "Only concepts already answered easily",
+            "c": "Unrelated material"
+          },
+          "correct": "a",
+          "accepted": []
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "concept": "Quiz interpretation",
+      "prompt": "Consider what ten correct answers tell you.",
+      "source": "Demo notes, page 1",
+      "evidence": "A quiz samples understanding; a perfect score does not prove complete mastery of every concept.",
+      "explanation": "A perfect result describes this attempt. Other concepts and later recall may still need practice.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Ten correct answers guarantee mastery of every detail: true or false?",
+          "kind": "fill",
+          "options": {},
+          "correct": "",
+          "accepted": [
+            "false",
+            "no"
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "What does a ten-question quiz measure?",
+          "kind": "choice",
+          "options": {
+            "a": "A sample of understanding",
+            "b": "A guarantee of permanent memory",
+            "c": "No useful information"
+          },
+          "correct": "a",
+          "accepted": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+NUDGE — demonstration notes (page 1)
+
+These notes support the bundled simulated quiz. Uploaded files are NOT analyzed in simulated mode.
+
+Retrieval practice means bringing information to mind without looking at the source.
+Spacing distributes practice across separate study periods.
+Feedback identifies mistakes so the learner can correct them.
+Interleaving mixes different kinds of problems within a practice session.
+Elaboration connects new information to what the learner already knows.
+Self-explanation describes why a solution step makes sense.
+Silencing optional notifications reduces interruptions during focus time.
+A planned break separates focus blocks and allows a pause before returning.
+Missed concepts are useful targets for the next focused review.
+A quiz samples understanding; a perfect score does not prove complete mastery of every concept.
