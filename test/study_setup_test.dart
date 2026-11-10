@@ -183,7 +183,7 @@ void main() {
         expect(find.text('Music'), findsNothing);
         expect(find.text('Intense Focus'), findsNothing);
         expect(find.text('Biology'), findsNothing);
-        expect(find.text('Pause'), findsOneWidget);
+        expect(find.byTooltip('Pause timer'), findsOneWidget);
         expect(find.text('Skip preparation'), findsOneWidget);
 
         time = time.add(const Duration(seconds: 30));

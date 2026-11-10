@@ -183,6 +183,10 @@ void main() {
   testWidgets('preparation resumes and starts focus automatically', (
     tester,
   ) async {
+    tester.view.physicalSize = const Size(568, 320);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
     var time = DateTime.utc(2026);
     final controller = SessionController(
       repository: FakeRepository(),
@@ -200,22 +204,53 @@ void main() {
     expect(find.text('Phone is out of reach'), findsNothing);
     expect(find.text('Do Not Disturb is on'), findsNothing);
     expect(find.text('0:30'), findsOneWidget);
-    expect(find.text('Skip preparation'), findsOneWidget);
+    final preparationCue = find.text(
+      'Take a sip of water.\nBreathe in slowly, then breathe out.',
+    );
+    expect(preparationCue, findsOneWidget);
+    final skip = find.widgetWithText(OutlinedButton, 'Skip preparation');
+    await tester.ensureVisible(skip);
+    await tester.pumpAndSettle();
+    expect(skip.hitTestable(), findsOneWidget);
     expect(find.text('Choose study method'), findsNothing);
-    await tester.tap(find.text('Pause'));
+    final pause = find.descendant(
+      of: find.byType(CountdownRing),
+      matching: find.byTooltip('Pause timer'),
+    );
+    expect(pause, findsOneWidget);
+    expect(
+      find.descendant(of: pause, matching: find.byIcon(Icons.pause_rounded)),
+      findsOneWidget,
+    );
+    await tester.ensureVisible(pause);
+    await tester.pumpAndSettle();
+    await tester.tap(pause.hitTestable());
     await tester.pumpAndSettle();
     time = time.add(const Duration(seconds: 30));
     await controller.refresh();
     await tester.pumpAndSettle();
     expect(controller.active!.phase, SessionPhase.preparing);
     expect(find.text('0:30'), findsOneWidget);
-    await tester.tap(find.text('Resume'));
+    final resume = find.descendant(
+      of: find.byType(CountdownRing),
+      matching: find.byTooltip('Resume timer'),
+    );
+    expect(resume, findsOneWidget);
+    expect(
+      find.descendant(
+        of: resume,
+        matching: find.byIcon(Icons.play_arrow_rounded),
+      ),
+      findsOneWidget,
+    );
+    await tester.tap(resume);
     await tester.pumpAndSettle();
     time = time.add(const Duration(seconds: 30));
     await controller.refresh();
     await tester.pumpAndSettle();
     expect(controller.active!.phase, SessionPhase.focus);
     expect(find.text('10:00'), findsOneWidget);
+    expect(preparationCue, findsNothing);
     await tester.pumpWidget(const SizedBox());
     controller.dispose();
   });

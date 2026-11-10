@@ -780,6 +780,21 @@ class _StudyHomeState extends State<StudyHome> with WidgetsBindingObserver {
     );
   }
 
+  Widget _timerPauseButton({
+    required bool isPaused,
+    required VoidCallback? onPressed,
+  }) {
+    return IconButton.filled(
+      tooltip: isPaused ? 'Resume timer' : 'Pause timer',
+      onPressed: onPressed,
+      icon: Icon(isPaused ? Icons.play_arrow_rounded : Icons.pause_rounded),
+      style: IconButton.styleFrom(
+        minimumSize: const Size.square(48),
+        shape: const CircleBorder(),
+      ),
+    );
+  }
+
   Widget _session() {
     final session = controller.active!;
     final remaining = controller.remaining;
@@ -787,42 +802,48 @@ class _StudyHomeState extends State<StudyHome> with WidgetsBindingObserver {
       final paused = session.isPaused;
       final canControl =
           controller.canAct && session.pausedPreparationMillis == null;
-      return Padding(
-        padding: NudgeTheme.pagePadding,
-        child: Column(
-          children: [
-            Expanded(
-              child: CountdownRing(
-                remaining: remaining,
-                total: session.phaseDuration,
-                label: paused ? 'Preparation paused' : _phaseName,
-                isPaused: paused,
+      return CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Padding(
+              padding: NudgeTheme.pagePadding,
+              child: Column(
+                children: [
+                  Text(
+                    'Take a sip of water.\nBreathe in slowly, then breathe out.',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  const SizedBox(height: 12),
+                  Expanded(
+                    child: CountdownRing(
+                      remaining: remaining,
+                      total: session.phaseDuration,
+                      label: paused ? 'Preparation paused' : _phaseName,
+                      isPaused: paused,
+                      action: _timerPauseButton(
+                        isPaused: paused,
+                        onPressed: !canControl
+                            ? null
+                            : paused
+                            ? controller.resumeSession
+                            : () => controller.pauseSession(
+                                expectedPhase: SessionPhase.preparing,
+                              ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  OutlinedButton(
+                    onPressed: canControl ? controller.readyToFocus : null,
+                    child: const Text('Skip preparation'),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 16),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                FilledButton(
-                  onPressed: !canControl
-                      ? null
-                      : paused
-                      ? controller.resumeSession
-                      : () => controller.pauseSession(
-                          expectedPhase: SessionPhase.preparing,
-                        ),
-                  child: Text(paused ? 'Resume' : 'Pause'),
-                ),
-                OutlinedButton(
-                  onPressed: canControl ? controller.readyToFocus : null,
-                  child: const Text('Skip preparation'),
-                ),
-              ],
-            ),
-          ],
-        ),
+          ),
+        ],
       );
     }
     final focus = session.phase == SessionPhase.focus;
@@ -862,8 +883,8 @@ class _StudyHomeState extends State<StudyHome> with WidgetsBindingObserver {
           total: session.phaseDuration,
           label: _phaseName,
           isPaused: session.isPaused,
-          action: IconButton.filled(
-            tooltip: session.isPaused ? 'Resume timer' : 'Pause timer',
+          action: _timerPauseButton(
+            isPaused: session.isPaused,
             onPressed:
                 controller.canAct &&
                     (session.isPaused || remaining > Duration.zero)
@@ -871,13 +892,6 @@ class _StudyHomeState extends State<StudyHome> with WidgetsBindingObserver {
                       ? controller.resumeSession
                       : controller.pauseSession
                 : null,
-            icon: Icon(
-              session.isPaused ? Icons.play_arrow_rounded : Icons.pause_rounded,
-            ),
-            style: IconButton.styleFrom(
-              minimumSize: const Size.square(48),
-              shape: const CircleBorder(),
-            ),
           ),
         ),
         if (session.isPaused) ...[
